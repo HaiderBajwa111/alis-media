@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-20 w-48 h-48 sm:w-80 sm:h-80 bg-accent/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+      <div className="relative z-10 max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -107,9 +107,9 @@ export default function Footer() {
             <h4 className="text-lg sm:text-xl font-semibold tracking-tight mb-6 sm:mb-8 text-foreground">Contact Info</h4>
             <div className="space-y-4 sm:space-y-6 text-muted-foreground">
               {[
-                { icon: Phone, text: "(555) 123-4567" },
-                { icon: Mail, text: "hello@aliasemedia.com" },
-                { icon: MapPin, text: "123 Business Ave, Suite 100\nNew York, NY 10001", multiline: true }
+                { icon: Phone, text: "+1 (914) 415-1058" },
+                { icon: Mail, text: "aliasemedia@gmail.com" },
+                { icon: MapPin, text: "Upstate NewYork, NY 12834", multiline: true }
               ].map((contact, index) => (
                 <motion.div 
                   key={index}
