@@ -16,6 +16,7 @@ export default function CTASection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 items-center">
+          {/* Left Column */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -44,6 +45,7 @@ export default function CTASection() {
               Start getting quality leads today and watch your income grow.
             </motion.p>
             
+            {/* Benefits List */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -72,6 +74,7 @@ export default function CTASection() {
               ))}
             </motion.div>
 
+            {/* Buttons */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -79,9 +82,14 @@ export default function CTASection() {
               viewport={{ once: true }}
               className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4"
             >
+              {/* Get Started Form Button */}
               <ContactForm
                 trigger={
-                  <Button size="lg" variant="secondary" className="group h-12 sm:h-14 px-6 sm:px-10 text-sm sm:text-base bg-white text-primary hover:bg-white/90 relative overflow-hidden hover:scale-105 active:scale-95 transition-transform w-full sm:w-auto">
+                  <Button 
+                    size="lg" 
+                    variant="secondary" 
+                    className="group h-12 sm:h-14 px-6 sm:px-10 text-sm sm:text-base bg-white text-primary hover:bg-white/90 relative overflow-hidden hover:scale-105 active:scale-95 transition-transform w-full sm:w-auto"
+                  >
                     <span className="relative z-10 flex items-center justify-center">
                       Get Started Now
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -90,19 +98,28 @@ export default function CTASection() {
                   </Button>
                 }
               />
-              
-              <ContactForm
-                trigger={
-                  <Button size="lg" variant="outline" className="border-white/60 text-white hover:bg-white/20 hover:border-white/80 hover:text-white h-12 sm:h-14 px-6 sm:px-10 text-sm sm:text-base backdrop-blur-sm hover:scale-105 active:scale-95 transition-transform w-full sm:w-auto shadow-lg">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Schedule Call
-                  </Button>
-                }
-                title="Schedule a Call"
-              />
+
+              {/* Calendly Link in New Tab */}
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="border-white/60 text-white hover:bg-white/20 hover:border-white/80 hover:text-white h-12 sm:h-14 px-6 sm:px-10 text-sm sm:text-base backdrop-blur-sm hover:scale-105 active:scale-95 transition-transform w-full sm:w-auto shadow-lg"
+              >
+                <a
+                  href="https://calendly.com/aliasemedia/meeting-with-team-aliase"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center"
+                >
+                  <Phone className="mr-2 h-4 w-4" />
+                  Schedule Call
+                </a>
+              </Button>
             </motion.div>
           </motion.div>
 
+          {/* Right Column Image */}
           <motion.div 
             initial={{ opacity: 0, x: 50, scale: 0.9 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
