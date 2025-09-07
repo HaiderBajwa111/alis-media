@@ -31,7 +31,7 @@ function HorizontalLogo({ size }: { size: number }) {
   
   return (
     <div className="flex items-center gap-3" style={{ transform: `scale(${scale})`, transformOrigin: 'left center' }}>
-      <LogoIcon size={32} />
+      {/* <LogoIcon size={32} /> */}
       <div className="flex items-center gap-2 leading-none">
         <span className="text-lg font-bold tracking-tight text-primary">
           ALIASE

@@ -324,7 +324,7 @@ function HorizontalLogo({ theme }: { theme: 'light' | 'dark' }) {
   const colors = getThemeColors(theme);
   return (
     <div className="flex items-center gap-3">
-      <LogoIcon theme={theme} size={32} />
+      {/* <LogoIcon theme={theme} size={32} /> */}
       <div className="flex flex-col leading-none">
         <span className="text-lg font-bold tracking-tight" style={{ color: colors.navy }}>
           ALIASE
@@ -341,7 +341,7 @@ function StackedLogo({ theme }: { theme: 'light' | 'dark' }) {
   const colors = getThemeColors(theme);
   return (
     <div className="flex flex-col items-center gap-2">
-      <LogoIcon theme={theme} size={40} />
+      {/* <LogoIcon theme={theme} size={40} /> */}
       <div className="flex flex-col items-center leading-none">
         <span className="text-lg font-bold tracking-tight" style={{ color: colors.navy }}>
           ALIASE
