@@ -54,7 +54,6 @@ export default function CTASection() {
               className="space-y-4 sm:space-y-6"
             >
               {[
-                "30-day money-back guarantee",
                 "No setup fees or hidden costs", 
                 "Cancel anytime, no contracts"
               ].map((benefit, index) => (

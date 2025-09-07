@@ -29,7 +29,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              <Badge variant="secondary" className="w-fit text-xs tracking-wide bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors">
+              <Badge variant="secondary" className="w-fit text-xs tracking-wide bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors whitespace-normal">
                 🔥 NO RISK - You Pay Nothing Before, Only After Getting The Lease
               </Badge>
             </motion.div>
