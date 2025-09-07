@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Phone, Play } from "lucide-react";
 import { motion } from "motion/react";
 import ContactForm from "./ContactForm";
 import heroOfficeImage from 'figma:asset/17b0986c40e45febb2cfe97cfad53fe6667462a2.png';
@@ -74,14 +74,14 @@ export default function HeroSection() {
               {/* <ContactForm
                 trigger={ */}
                   <Button variant="outline" size="lg" className="group h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base border-border hover:border-primary/50 hover:bg-primary/5 w-full sm:w-auto">
-                    <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                   <a
                   href="https://calendly.com/aliasemedia/meeting-with-team-aliase"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center"
                   >
-                    Watch Demo
+                  <Phone className="mr-2 h-4 w-4" />
+                  Schedule Call
                   </a>
                   </Button>
                 {/* } */}

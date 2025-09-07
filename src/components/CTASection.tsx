@@ -6,7 +6,7 @@ import ContactForm from "./ContactForm";
 
 export default function CTASection() {
   return (
-    <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-primary via-brand-red-light to-accent text-primary-foreground relative overflow-hidden">
+    <section id ="ctaSection" className="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-primary via-brand-red-light to-accent text-primary-foreground relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 sm:top-20 left-4 sm:left-10 w-64 h-64 sm:w-96 sm:h-96 bg-white/5 rounded-full blur-3xl animate-pulse"></div>

@@ -79,19 +79,17 @@ export default function Footer() {
             <h4 className="text-lg sm:text-xl font-semibold tracking-tight mb-6 sm:mb-8 text-foreground">Company</h4>
             <ul className="space-y-3 sm:space-y-4 text-muted-foreground">
               {[
-                "About Us",
-                "Case Studies",
-                "Blog", 
-                "Careers",
-                "Contact"
+                {key: "About Us", link: "#ctaSection"},
+                {key: "Services", link: "#services"},
+                {key: "Plans", link: "#pricing"}
               ].map((item, index) => (
                 <motion.li 
                   key={index}
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <a href="#" className="hover:text-primary transition-colors duration-300 text-base sm:text-lg">
-                    {item}
+                  <a href={item.link} className="hover:text-primary transition-colors duration-300 text-base sm:text-lg">
+                    {item.key}
                   </a>
                 </motion.li>
               ))}
@@ -108,7 +106,7 @@ export default function Footer() {
             <div className="space-y-4 sm:space-y-6 text-muted-foreground">
               {[
                 { icon: Phone, text: "+1 (914) 415-1058" },
-                { icon: Mail, text: "aliasemedia@gmail.com" },
+                { icon: Mail, text: "hello@aliasemedia.com" },
                 { icon: MapPin, text: "Upstate NewYork, NY 12834", multiline: true }
               ].map((contact, index) => (
                 <motion.div 
