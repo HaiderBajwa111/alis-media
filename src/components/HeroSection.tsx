@@ -16,7 +16,7 @@ export default function HeroSection() {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-gradient-to-r from-primary/12 via-brand-red-light/8 to-brand-black/6 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-32 pb-12 sm:pb-20">
+      <div className="relative z-10 max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-32 pb-12 sm:pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center min-h-[calc(100vh-10rem)]">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
@@ -75,7 +75,14 @@ export default function HeroSection() {
                 trigger={
                   <Button variant="outline" size="lg" className="group h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base border-border hover:border-primary/50 hover:bg-primary/5 w-full sm:w-auto">
                     <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                  <a
+                  href="https://calendly.com/aliasemedia/meeting-with-team-aliase"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center"
+                  >
                     Watch Demo
+                  </a>
                   </Button>
                 }
                 title="Request a Demo"

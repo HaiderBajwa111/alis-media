@@ -57,7 +57,7 @@ export default function PricingSection() {
         <div className="absolute bottom-16 sm:bottom-32 right-4 sm:right-20 w-48 h-48 sm:w-80 sm:h-80 bg-accent/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
