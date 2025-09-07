@@ -71,8 +71,8 @@ export default function HeroSection() {
                   </Button>
                 }
               />
-              <ContactForm
-                trigger={
+              {/* <ContactForm
+                trigger={ */}
                   <Button variant="outline" size="lg" className="group h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base border-border hover:border-primary/50 hover:bg-primary/5 w-full sm:w-auto">
                     <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                   <a
@@ -84,9 +84,8 @@ export default function HeroSection() {
                     Watch Demo
                   </a>
                   </Button>
-                }
-                title="Request a Demo"
-              />
+                {/* } */}
+              {/* /> */}
             </motion.div>
 
             <motion.div 
