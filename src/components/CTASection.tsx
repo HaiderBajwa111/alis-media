@@ -54,8 +54,8 @@ export default function CTASection() {
               className="space-y-4 sm:space-y-6"
             >
               {[
-                "No setup fees or hidden costs", 
-                "Cancel anytime, no contracts"
+                "No payment before lead delivery", 
+                "Simple contract"
               ].map((benefit, index) => (
                 <motion.div 
                   key={index}
