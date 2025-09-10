@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Check } from "lucide-react";
 import { motion } from "motion/react";
-import ContactForm from "./ContactForm";
+import ClickUpForm from "./ClickUpForm";
 
 export default function PricingSection() {
   const plans = [
@@ -137,7 +137,7 @@ export default function PricingSection() {
                   ))}
                 </ul>
                 
-                <ContactForm
+                <ClickUpForm
                   trigger={
                     <Button 
                       className={`w-full h-12 sm:h-14 text-sm sm:text-base relative overflow-hidden group/btn hover:scale-[1.02] active:scale-[0.98] transition-transform ${
@@ -177,7 +177,7 @@ export default function PricingSection() {
           <p className="text-muted-foreground mb-6 sm:mb-8 text-base sm:text-xl leading-relaxed px-4">
             <strong>Additional Real Estate Marketing Services:</strong> Custom property listing websites, social media marketing for real estate agents, Google Ads management, and Facebook lead generation campaigns available with any package.
           </p>
-          <ContactForm
+          <ClickUpForm
             trigger={
               <Button variant="outline" className="h-12 sm:h-14 px-6 sm:px-10 text-sm sm:text-base border-2 border-border hover:border-primary/50 hover:bg-primary/5 hover:scale-105 active:scale-95 transition-transform">
                 Contact Sales

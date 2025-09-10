@@ -3,7 +3,7 @@ import { Badge } from "./ui/badge";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { ArrowRight, Phone, Play } from "lucide-react";
 import { motion } from "motion/react";
-import ContactForm from "./ContactForm";
+import ClickUpForm from "./ClickUpForm";
 import heroOfficeImage from 'figma:asset/17b0986c40e45febb2cfe97cfad53fe6667462a2.png';
 
 export default function HeroSection() {
@@ -60,7 +60,7 @@ export default function HeroSection() {
               transition={{ delay: 0.8, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 sm:gap-6"
             >
-              <ContactForm
+              <ClickUpForm
                 trigger={
                   <Button size="lg" className="group h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base bg-primary hover:bg-primary/90 relative overflow-hidden w-full sm:w-auto">
                     <span className="relative z-10 flex items-center justify-center">

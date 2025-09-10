@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { ArrowRight, Phone } from "lucide-react";
 import { motion } from "motion/react";
-import ContactForm from "./ContactForm";
+import ClickUpForm from "./ClickUpForm";
 
 export default function CTASection() {
   return (
@@ -82,7 +82,7 @@ export default function CTASection() {
               className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4"
             >
               {/* Get Started Form Button */}
-              <ContactForm
+              <ClickUpForm
                 trigger={
                   <Button 
                     size="lg" 

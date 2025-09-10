@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
-import ContactForm from "./ContactForm";
+import ClickUpForm from "./ClickUpForm";
 
 
 export default function Header() {
@@ -64,7 +64,7 @@ export default function Header() {
             transition={{ delay: 0.6, duration: 0.6 }}
             className="hidden sm:flex items-center"
           >
-            <ContactForm
+            <ClickUpForm
               trigger={
                 <Button className="text-sm px-4 lg:px-6 bg-primary hover:bg-primary/90 relative overflow-hidden group">
                   <span className="relative z-10">Get Started</span>
@@ -142,7 +142,7 @@ export default function Header() {
                   </nav>
                   
                   <div className="flex flex-col pt-6 border-t border-border/20">
-                    <ContactForm
+                    <ClickUpForm
                       trigger={
                         <Button className="w-full justify-center h-12 text-base bg-primary hover:bg-primary/90 touch-manipulation">
                           Get Started

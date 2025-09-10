@@ -3,6 +3,13 @@ import { motion } from "motion/react";
 import Logo from "./Logo";
 
 export default function Footer() {
+  const socialLinks = [
+    { icon: Facebook, url: "https://www.facebook.com/share/19a5hXq2ET/?mibextid=wwXIfr" },
+    { icon: Instagram, url: "https://www.instagram.com/aliasemedia?igsh=MXZicHU5MW81MG55bQ==" },
+    { icon: Linkedin, url: "https://www.linkedin.com/company/aliase-media" },
+    { icon: Twitter, url: "#" },
+  ];
+
   return (
     <footer className="bg-background border-t border-border/50 relative overflow-hidden">
       {/* Background decoration */}
@@ -13,6 +20,7 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+          {/* About Section */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -29,19 +37,26 @@ export default function Footer() {
             </div>
             
             <div className="flex space-x-4 sm:space-x-6">
-              {[Facebook, Instagram, Linkedin, Twitter].map((Icon, index) => (
+              {socialLinks.map(({ icon: Icon, url }, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.2, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                   className="w-8 h-8 sm:w-10 sm:h-10 bg-card border border-border rounded-lg sm:rounded-xl flex items-center justify-center cursor-pointer group hover:border-primary/50 transition-all duration-300"
                 >
-                  <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <a 
+                    href={url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  </a>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
+          {/* Services Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -70,6 +85,7 @@ export default function Footer() {
             </ul>
           </motion.div>
 
+          {/* Company Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -96,6 +112,7 @@ export default function Footer() {
             </ul>
           </motion.div>
 
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -127,6 +144,7 @@ export default function Footer() {
           </motion.div>
         </div>
 
+        {/* Bottom Section */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
