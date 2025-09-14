@@ -157,14 +157,18 @@ export default function Footer() {
               © 2025 Aliase Media. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center md:justify-end space-x-4 sm:space-x-8">
-              {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((link, index) => (
-                <motion.a 
+              {[
+                { name: "Privacy Policy", link: "https://docs.google.com/document/d/1JZKAK3iZe2WUzdzIHWOqXMU34Qy7o26hoP1sXw3MiIk/edit?usp=sharing" },
+                { name: "Terms of Service", link: "#" },
+                { name: "Cookie Policy", link: "#" }
+              ].map((item, index) => (
+                <motion.a
                   key={index}
-                  href="#" 
+                  href={item.link}
                   whileHover={{ y: -2 }}
                   className="text-muted-foreground hover:text-primary transition-colors duration-300 text-base sm:text-lg"
                 >
-                  {link}
+                  {item.name}
                 </motion.a>
               ))}
             </div>
@@ -174,3 +178,4 @@ export default function Footer() {
     </footer>
   );
 }
+
