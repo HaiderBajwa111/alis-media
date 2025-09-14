@@ -10,7 +10,7 @@ export default function PricingSection() {
       name: "Basic Real Estate Lead Package",
       description: "Essential lead generation for new agents",
       features: [
-        "10-15 qualified real estate leads per month",
+        "5-7 qualified real estate leads per month",
         "Pre-screened buyer & seller prospects",
         "Local market targeting in your area",
         "Basic CRM integration & lead delivery",
@@ -23,7 +23,7 @@ export default function PricingSection() {
       name: "Professional Real Estate Growth Package",
       description: "Advanced lead generation for established agents",
       features: [
-        "25-35 high-quality real estate leads monthly",
+        "10-15 high-quality real estate leads monthly",
         "Priority buyer, seller & investor leads",
         "Advanced demographic targeting & scoring",
         "Dedicated real estate marketing specialist",
