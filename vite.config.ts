@@ -2,9 +2,19 @@
   import { defineConfig } from 'vite';
   import react from '@vitejs/plugin-react-swc';
   import path from 'path';
+  import { copyFileSync } from 'fs';
 
   export default defineConfig({
-    plugins: [react()],
+    plugins: [
+      react(),
+      {
+        name: 'copy-sitemap',
+        writeBundle() {
+          copyFileSync('sitemap.xml', 'build/sitemap.xml');
+          copyFileSync('robots.txt', 'build/robots.txt');
+        }
+      }
+    ],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
@@ -19,6 +29,7 @@
         'jsr:@supabase': 'jsr:',
         'input-otp@1.4.2': 'input-otp',
         'figma:asset/17b0986c40e45febb2cfe97cfad53fe6667462a2.png': path.resolve(__dirname, './src/assets/17b0986c40e45febb2cfe97cfad53fe6667462a2.png'),
+        'figma:asset/Logo8.svg': path.resolve(__dirname, './src/assets/Logo8.svg'),
         'embla-carousel-react@8.6.0': 'embla-carousel-react',
         'cmdk@1.1.1': 'cmdk',
         'class-variance-authority@0.7.1': 'class-variance-authority',

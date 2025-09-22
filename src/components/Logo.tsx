@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "motion/react";
 
 interface LogoProps {
@@ -27,20 +28,50 @@ export default function Logo({ className = "", showText = true, size = "md" }: L
 
 // Logo Components - Always dark theme since we force dark mode
 function HorizontalLogo({ size }: { size: number }) {
-  const scale = size / 48; // Base size is 48px
+  const textSize = size === 32 ? 'text-sm' : size === 48 ? 'text-lg' : 'text-xl';
   
   return (
-    <div className="flex items-center gap-3" style={{ transform: `scale(${scale})`, transformOrigin: 'left center' }}>
-      {/* <LogoIcon size={32} /> */}
+    <div className="flex items-center gap-3">
+      <AliaseLogoIcon size={size} />
       <div className="flex items-center gap-2 leading-none">
-        <span className="text-lg font-bold tracking-tight text-primary">
+        <span className={`${textSize} font-bold tracking-tight text-primary`}>
           ALIASE
         </span>
-        <span className="text-lg font-bold tracking-tight text-foreground">
+        <span className={`${textSize} font-bold tracking-tight text-foreground`}>
           MEDIA
         </span>
       </div>
     </div>
+  );
+}
+
+function AliaseLogoIcon({ size }: { size: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 1080 1080"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="flex-shrink-0"
+    >
+      <defs>
+        <style>
+          {`
+            .cls-1 { fill: #fff; }
+            .cls-2 { fill: #ef4444; }
+            .cls-3 { fill: #0f0f0f; }
+          `}
+        </style>
+      </defs>
+      <g>
+        <rect className="cls-3" width="1080" height="1080"/>
+        <g>
+          <polygon className="cls-1" points="215.53 755.37 559.72 153.87 719.84 580.23 864.47 581.16 786.52 716.4 439.51 716.4 516.52 580.23 562.07 580.23 524.97 484.9 370.49 755.37 215.53 755.37"/>
+          <polygon className="cls-2" points="629.84 755.37 671.79 871.67 850.85 926.13 785.74 755.37 629.84 755.37"/>
+        </g>
+      </g>
+    </svg>
   );
 }
 

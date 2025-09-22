@@ -8,7 +8,7 @@ interface ClickUpFormProps {
 export default function ClickUpForm({ trigger, title = "Get Started Today" }: ClickUpFormProps) {
   const handleClick = () => {
     window.open(
-      "https://forms.clickup.com/90132400098/f/2ky4yhz2-693/AOQ2SERQZ158NDIQVV",
+      "https://form.asana.com/?k=nf8sn0NzrM0DO8s3hfSazg&d=1211351713385804",
       "_blank",
       "noopener,noreferrer"
     );
