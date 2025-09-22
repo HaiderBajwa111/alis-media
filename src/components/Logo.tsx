@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
+import Logo8Svg from "../assets/Logo8.svg";
 
 interface LogoProps {
   className?: string;
@@ -47,31 +48,13 @@ function HorizontalLogo({ size }: { size: number }) {
 
 function AliaseLogoIcon({ size }: { size: number }) {
   return (
-    <svg
+    <img
+      src={Logo8Svg}
+      alt="Aliase Media Logo"
       width={size}
       height={size}
-      viewBox="0 0 1080 1080"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       className="flex-shrink-0"
-    >
-      <defs>
-        <style>
-          {`
-            .cls-1 { fill: #fff; }
-            .cls-2 { fill: #ef4444; }
-            .cls-3 { fill: #0f0f0f; }
-          `}
-        </style>
-      </defs>
-      <g>
-        <rect className="cls-3" width="1080" height="1080"/>
-        <g>
-          <polygon className="cls-1" points="215.53 755.37 559.72 153.87 719.84 580.23 864.47 581.16 786.52 716.4 439.51 716.4 516.52 580.23 562.07 580.23 524.97 484.9 370.49 755.37 215.53 755.37"/>
-          <polygon className="cls-2" points="629.84 755.37 671.79 871.67 850.85 926.13 785.74 755.37 629.84 755.37"/>
-        </g>
-      </g>
-    </svg>
+    />
   );
 }
 
