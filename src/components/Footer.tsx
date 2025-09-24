@@ -122,7 +122,7 @@ export default function Footer() {
             <h4 className="text-lg sm:text-xl font-semibold tracking-tight mb-6 sm:mb-8 text-foreground">Contact Info</h4>
             <div className="space-y-4 sm:space-y-6 text-muted-foreground">
               {[
-                { icon: Phone, text: "+1 (914) 415-1058" },
+                { icon: Phone, text: "+1 (914) 568-5461" },
                 { icon: Mail, text: "hello@aliasemedia.com" },
                 { icon: MapPin, text: "Upstate NewYork, NY 12834", multiline: true }
               ].map((contact, index) => (
