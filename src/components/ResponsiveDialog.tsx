@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 
@@ -35,9 +35,15 @@ export default function ResponsiveDialog({
   if (isMobile) {
     return (
       <Sheet open={open} onOpenChange={onOpenChange}>
-        <SheetTrigger asChild>
-          {trigger}
-        </SheetTrigger>
+        {open === undefined ? (
+          <SheetTrigger asChild>
+            {trigger}
+          </SheetTrigger>
+        ) : (
+          <div onClick={() => onOpenChange?.(true)}>
+            {trigger}
+          </div>
+        )}
         <SheetContent 
           side="bottom" 
           className="h-[90vh] rounded-t-xl border-t border-border/50 bg-card/95 backdrop-blur-xl"
@@ -56,17 +62,23 @@ export default function ResponsiveDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogTrigger asChild>
-        {trigger}
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-md lg:max-w-lg bg-card border-border/50 backdrop-blur-xl">
+      {open === undefined ? (
+        <DialogTrigger asChild>
+          {trigger}
+        </DialogTrigger>
+      ) : (
+        <div onClick={() => onOpenChange?.(true)}>
+          {trigger}
+        </div>
+      )}
+      <DialogContent className="w-[50vw] h-[70vh] bg-card border-border/50 backdrop-blur-xl p-0 flex flex-col">
         {(title || description) && (
-          <DialogHeader className="space-y-4">
+          <DialogHeader className="space-y-4 px-6 pt-6 pb-2 flex-shrink-0">
             {title && <DialogTitle className="text-2xl font-bold">{title}</DialogTitle>}
             {description && <DialogDescription>{description}</DialogDescription>}
           </DialogHeader>
         )}
-        <div className="mt-6">
+        <div className="overflow-y-auto flex-1" style={{ padding: title || description ? '0 1.5rem 1.5rem' : '1.5rem' }}>
           {children}
         </div>
       </DialogContent>
