@@ -71,7 +71,7 @@ export default function ResponsiveDialog({
           {trigger}
         </div>
       )}
-      <DialogContent className="w-[50vw] h-[70vh] bg-card border-border/50 backdrop-blur-xl p-0 flex flex-col">
+      <DialogContent className="!w-[50vw] !max-w-[50vw] h-[70vh] bg-card border-border/50 backdrop-blur-xl p-0 flex flex-col">
         {(title || description) && (
           <DialogHeader className="space-y-4 px-6 pt-6 pb-2 flex-shrink-0">
             {title && <DialogTitle className="text-2xl font-bold">{title}</DialogTitle>}
