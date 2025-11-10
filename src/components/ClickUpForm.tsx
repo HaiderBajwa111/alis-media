@@ -11,23 +11,35 @@ export default function ClickUpForm({ trigger, title = "Get Started Today" }: Cl
   const [scriptLoaded, setScriptLoaded] = useState(false);
 
   useEffect(() => {
-    if (isOpen && !scriptLoaded) {
-      // Load Typeform embed script
-      const script = document.createElement('script');
-      script.src = 'https://embed.typeform.com/next/embed.js';
-      script.async = true;
-      script.onload = () => setScriptLoaded(true);
-      document.body.appendChild(script);
-
-      return () => {
-        // Cleanup script when component unmounts
-        const existingScript = document.querySelector('script[src="https://embed.typeform.com/next/embed.js"]');
-        if (existingScript) {
-          document.body.removeChild(existingScript);
-        }
-      };
+    if (isOpen) {
+      // Check if script already exists
+      const existingScript = document.querySelector('script[src="https://embed.typeform.com/next/embed.js"]');
+      
+      if (existingScript) {
+        // Script already exists, mark as loaded
+        setScriptLoaded(true);
+        // Force Typeform to reinitialize after a short delay to ensure DOM is ready
+        setTimeout(() => {
+          // Typeform auto-detects elements with data-tf-live, but we can trigger it manually
+          if ((window as any).tf && (window as any).tf.load) {
+            (window as any).tf.load();
+          }
+        }, 200);
+      } else {
+        // Load Typeform embed script
+        const script = document.createElement('script');
+        script.src = 'https://embed.typeform.com/next/embed.js';
+        script.async = true;
+        script.onload = () => {
+          setScriptLoaded(true);
+        };
+        script.onerror = () => {
+          console.error('Failed to load Typeform script');
+        };
+        document.body.appendChild(script);
+      }
     }
-  }, [isOpen, scriptLoaded]);
+  }, [isOpen]);
 
   // Ensure body scrolling is restored when modal closes
   useEffect(() => {
@@ -66,6 +78,7 @@ export default function ClickUpForm({ trigger, title = "Get Started Today" }: Cl
       onOpenChange={handleOpenChange}
     >
       <div 
+        key={isOpen ? 'typeform-open' : 'typeform-closed'}
         data-tf-live="01K95RH44R7BZAMTYBMN5E177X"
         className="w-full h-full -mx-6"
         style={{ width: 'calc(100% + 3rem)', minHeight: '500px' }}
