@@ -11,6 +11,24 @@ import Footer from "./components/Footer";
 import FormPage from "./components/FormPage";
 
 function HomePage() {
+  useEffect(() => {
+    // Ensure page is fully interactive when returning from form page
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+    document.body.style.pointerEvents = '';
+    document.documentElement.style.overflow = '';
+    document.documentElement.style.paddingRight = '';
+    document.documentElement.style.pointerEvents = '';
+    
+    // Remove any blocking overlays
+    const blockingOverlays = document.querySelectorAll('[class*="tf-overlay"], [class*="tf-popup"]');
+    blockingOverlays.forEach(el => {
+      if (el.parentNode) {
+        el.parentNode.removeChild(el);
+      }
+    });
+  }, []);
+
   return (
     <>
       <Header />

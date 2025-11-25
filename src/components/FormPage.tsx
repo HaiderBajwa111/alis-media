@@ -32,7 +32,44 @@ export default function FormPage() {
       };
       document.body.appendChild(script);
     }
+
+    // Cleanup function when component unmounts
+    return () => {
+      // Restore body scroll
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+      document.documentElement.style.overflow = '';
+      document.documentElement.style.paddingRight = '';
+      
+      // Remove any Typeform overlays that might be blocking (but keep the form container)
+      const typeformOverlays = document.querySelectorAll('[class*="tf-overlay"], [class*="tf-popup"]');
+      typeformOverlays.forEach(el => {
+        if (el.parentNode) {
+          el.parentNode.removeChild(el);
+        }
+      });
+      
+      // Ensure pointer events are enabled
+      document.body.style.pointerEvents = '';
+      document.documentElement.style.pointerEvents = '';
+      
+      // Force a reflow to ensure styles are applied
+      void document.body.offsetHeight;
+    };
   }, []);
+
+  const handleBackClick = () => {
+    // Clean up before navigating
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+    document.documentElement.style.overflow = '';
+    document.documentElement.style.paddingRight = '';
+    
+    // Small delay to ensure cleanup completes
+    setTimeout(() => {
+      navigate('/');
+    }, 50);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -41,7 +78,7 @@ export default function FormPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Button
             variant="ghost"
-            onClick={() => navigate('/')}
+            onClick={handleBackClick}
             className="text-muted-foreground hover:text-primary"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
