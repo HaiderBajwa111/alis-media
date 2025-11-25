@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import ServicesSection from "./components/ServicesSection";
@@ -7,6 +8,24 @@ import TestimonialsSection from "./components/TestimonialsSection";
 import PricingSection from "./components/PricingSection";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
+import FormPage from "./components/FormPage";
+
+function HomePage() {
+  return (
+    <>
+      <Header />
+      <main>
+        <HeroSection />
+        <ServicesSection />
+        <HowItWorksSection />
+        <TestimonialsSection />
+        <PricingSection />
+        <CTASection />
+      </main>
+      <Footer />
+    </>
+  );
+}
 
 export default function App() {
   useEffect(() => {
@@ -31,17 +50,13 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <HeroSection />
-        <ServicesSection />
-        <HowItWorksSection />
-        <TestimonialsSection />
-        <PricingSection />
-        <CTASection />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen bg-background">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/form" element={<FormPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
